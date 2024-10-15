@@ -1,0 +1,116 @@
+;
+;	Printer Installation File
+;
+;	 List of supported printers, manufacturers
+;
+
+[Version]
+Signature="$Windows NT$"
+Provider=%POS%
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+CatalogFile=POSDRV.cat
+;
+; Manufacturer section.
+;
+; This section lists all of the manufacturers
+; that we will display in the Dialog box
+;
+
+[Manufacturer]
+"POS"=POS, NTamd64
+
+;
+; Model Specifications Section
+;
+
+[POS]
+"CP-Q1T"   = POS80C.GPD
+"CP-Q2"    = POS80C.GPD
+"CP-Q3"    = POS80C.GPD
+"BP-T3"    = POS80C.GPD
+"BM-i02"   = POS58.GPD
+"BM-i03"   = POS80.GPD
+
+[POS.NTamd64]
+"CP-Q1T"   = POS80C.GPD
+"CP-Q2"    = POS80C.GPD
+"CP-Q3"    = POS80C.GPD
+"BP-T3"    = POS80C.GPD
+"BM-i02"   = POS58.GPD
+"BM-i03"   = POS80.GPD
+
+;
+; Installer section(s) referenced above.
+;
+
+[POS58.GPD]
+CopyFiles=@POS58.DLL,@POS58.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS58.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[POS58C.GPD]
+CopyFiles=@POS58.DLL,@POS58C.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS58C.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[POS80.GPD]
+CopyFiles=@POS80.DLL,@POS80.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS80.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[POS80C.GPD]
+CopyFiles=@POS80.DLL,@POS80C.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS80C.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[POS90.GPD]
+CopyFiles=@POS80.DLL,@POS90.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS90.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[POS76.GPD]
+CopyFiles=@POS76.DLL,@POS76.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS76.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[POS76C.GPD]
+CopyFiles=@POS76.DLL,@POS76C.GPD
+DataSection=UNIDRV_DATA
+DataFile=POS76C.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[DestinationDirs]
+DefaultDestDir=66000
+
+[SourceDisksNames.amd64]
+1 = %disk1%,,,
+
+[SourceDisksFiles]
+POS58.DLL     = 1
+POS80.DLL     = 1
+POS76.DLL     = 1
+POS58.GPD     = 1
+POS58C.GPD    = 1
+POS80.GPD     = 1
+POS80C.GPD    = 1
+POS90.GPD     = 1
+POS76.GPD     = 1
+POS76C.GPD    = 1
+
+[Strings]
+PrinterClassName="Printers"
+disk1="POS Printer Driver Setup Disk"
